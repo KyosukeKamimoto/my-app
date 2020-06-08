@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <ons-navigator id="navigator" page="page1.html"></ons-navigator>
+    
+    <ons-template id="page1.html">
+      <ons-page id="home">
+        <ons-toolbar>
+          <div class="center">Home</div>
+        </ons-toolbar>
+  
+        <div class="content" style="text-align: center">
+          <h1>Good Day</h1>
+          <ul>
+            <li><ons-button id="single-button">1人</ons-button></li>
+            <li><ons-button id="double-button">2人</ons-button></li>
+            <li><ons-button id="many-button">大人数</ons-button></li>
+            <li><ons-button id="today-button">今日の運勢</ons-button></li>
+          </ul>
+        </div>
+      </ons-page>
+    </ons-template>
+   
+   <!-- 1人用 -->
+   <!-- 質問1 -->
+    <ons-template id="page2.html">
+      <ons-page id="question1-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+
+        <section class="container">
+          <p id="question">Q1.遠出したい？</p>
+          <ul id="answer">
+            <li><ons-button id="yes-button">Yes</ons-button></li>
+            <li><ons-button id="no-button">No</ons-button></li>
+          </ul>
+        </section>
+      </ons-page>
+    </ons-template>
+
+   <!-- 質問2 -->
+    <ons-template id="page3.html">
+      <ons-page id="question2-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+
+        <section class="container">
+          <p id="question">Q2.今の気分は？</p>
+          <ul id="answer">
+            <li><ons-button id="yes-button">騒ぎたい</ons-button></li>
+            <li><ons-button id="no-button">落ち着いた感じ</ons-button></li>
+          </ul>
+        </section>
+      </ons-page>
+    </ons-template>
+
+    <!-- 質問3 -->
+    <ons-template id="page4.html">
+      <ons-page id="question3-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+
+        <section class="container">
+          <p id="question">Q3.何か食べたい？</p>
+          <ul id="answer">
+            <li><ons-button id="yes-button">Yes</ons-button></li>
+            <li><ons-button id="no-button">No</ons-button></li>
+          </ul>
+        </section>
+      </ons-page>
+    </ons-template>
+  
+    <ons-template id="page5.html">
+      <ons-page id="result-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+  
+        <div class="content" style="text-align: center">
+          <h2>今日おすすめのプランは…</h2>
+          <img src="">
+          <h2>場所</h2>
+          <p>コメント</p>
+          
+          <ons-button id="back-button">Home➜</ons-button>
+        </div>
+      </ons-page>
+    </ons-template>
+
+
+    <!-- 今日の運勢 -->
+    <!-- <ons-template id="today-page.html">
+      <ons-page id="today-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+        </ons-toolbar>
+        <div id="btn">?</div>
+      </ons-page>
+    </ons-template> -->
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>
