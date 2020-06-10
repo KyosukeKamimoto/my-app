@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <title>Good Day</title>
   <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
 
@@ -21,8 +22,8 @@
           <div class="center">Home</div>
         </ons-toolbar>
   
-        <div class="content" style="text-align: center">
-          <h1>Good Day</h1>
+        <div class="content">
+          <h1 class="title">Good Day</h1>
           <ul>
             <li><ons-button id="single-button">1人</ons-button></li>
             <li><ons-button id="double-button">2人</ons-button></li>
@@ -33,7 +34,7 @@
       </ons-page>
     </ons-template>
    
-   <!-- 1人用 -->
+   <!-- 1人用 Q1がyesの場合 -->
    <!-- 質問1 -->
     <ons-template id="page2.html">
       <ons-page id="question1-page">
@@ -63,16 +64,34 @@
         <section class="container">
           <p id="question">Q2.今の気分は？</p>
           <ul id="answer">
-            <li><ons-button id="yes-button">騒ぎたい</ons-button></li>
+            <li><ons-button id="yes-button">楽しみたい！</ons-button></li>
             <li><ons-button id="no-button">落ち着いた感じ</ons-button></li>
           </ul>
         </section>
       </ons-page>
     </ons-template>
 
-    <!-- 質問3 -->
-    <ons-template id="page4.html">
-      <ons-page id="question3-page">
+    <!-- 質問3-1 -->
+    <ons-template id="page4-1.html">
+      <ons-page id="question3-1-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+
+        <section class="container">
+          <p id="question">Q3.何か食べたい？</p>
+          <ul id="answer">
+            <li><ons-button id="yes-button">Yes</ons-button></li>
+            <li><ons-button id="no-button">No</ons-button></li>
+          </ul>
+        </section>
+      </ons-page>
+    </ons-template>
+
+    <!-- 質問3-2 -->
+    <ons-template id="page4-2.html">
+      <ons-page id="question3-2-page">
         <ons-toolbar>
           <div class="left"><ons-back-button>Back</ons-back-button></div>
           <div class="center">1人用</div>
@@ -88,18 +107,77 @@
       </ons-page>
     </ons-template>
   
+ <!-- 結果画面 -->
+    <!-- y-y-yの時 -->
     <ons-template id="page5.html">
-      <ons-page id="result-page">
+      <ons-page id="hiking-page">
         <ons-toolbar>
           <div class="left"><ons-back-button>Back</ons-back-button></div>
           <div class="center">1人用</div>
         </ons-toolbar>
   
         <div class="content" style="text-align: center">
-          <h2>今日おすすめのプランは…</h2>
-          <img src="">
-          <h2>場所</h2>
-          <p>コメント</p>
+          <h2>あなたにおすすめのプランは…</h2>
+          <img src="C:\Users\user\monaca.my-app\image\ハイキング.png">
+          <h2>ハイキング</h2>
+          <p>山登りで運動をした後、景色を見ながら自然の中で食べるお弁当は絶品！リフレッシュすること間違いなし！</p>
+          
+          <ons-button id="back-button">Home➜</ons-button>
+        </div>
+      </ons-page>
+    </ons-template>
+
+    <!-- y-y-nの時 -->
+    <ons-template id="page6.html">
+      <ons-page id="live-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+  
+        <div class="content" style="text-align: center">
+          <h2>あなたにおすすめのプランは…</h2>
+          <img src="C:\Users\user\monaca.my-app\image\ライブ.png">
+          <h2>ライブ・フェス</h2>
+          <p>ライブやフェスに参加して騒ごう！思いっきり楽しんでストレス発散！</p>
+          
+          <ons-button id="back-button">Home➜</ons-button>
+        </div>
+      </ons-page>
+    </ons-template>
+
+    <!-- y-n-yの時 -->
+    <ons-template id="page7.html">
+      <ons-page id="trip-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+  
+        <div class="content" style="text-align: center">
+          <h2>あなたにおすすめのプランは…</h2>
+          <img src="C:\Users\user\monaca.my-app\image\食べ歩き.png">
+          <h2>食べ歩き旅</h2>
+          <p>鎌倉や金沢、伊勢など景観の良い場所に食べ歩き旅に行ってみましょう！心は休まり、腹は満たされる一石二鳥！</p>
+          
+          <ons-button id="back-button">Home➜</ons-button>
+        </div>
+      </ons-page>
+    </ons-template>
+
+    <!-- y-n-nの時 -->
+    <ons-template id="page8.html">
+      <ons-page id="sightseeing-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+  
+        <div class="content" style="text-align: center">
+          <h2>あなたにおすすめのプランは…</h2>
+          <img src="C:\Users\user\monaca.my-app\image\観光.png">
+          <h2>寺社巡り</h2>
+          <p>日本各地の有名な神社やお城に訪れてみましょう！歴史的建造物に触れることで心が休まるかも！</p>
           
           <ons-button id="back-button">Home➜</ons-button>
         </div>
@@ -107,16 +185,729 @@
     </ons-template>
 
 
+    <!-- 1人用 Q1がnoの場合 -->
+    <!-- 質問2 -->
+    <ons-template id="page3-1.html">
+      <ons-page id="question2-1-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+
+        <section class="container">
+          <p id="question">Q2.今の気分は？</p>
+          <ul id="answer">
+            <li><ons-button id="yes-button">楽しみたい！</ons-button></li>
+            <li><ons-button id="no-button">落ち着いた感じ</ons-button></li>
+          </ul>
+        </section>
+      </ons-page>
+    </ons-template>
+
+    <!-- 質問3-3 -->
+    <ons-template id="page4-3.html">
+      <ons-page id="question3-3-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+
+        <section class="container">
+          <p id="question">Q3.何か食べたい？</p>
+          <ul id="answer">
+            <li><ons-button id="yes-button">Yes</ons-button></li>
+            <li><ons-button id="no-button">No</ons-button></li>
+          </ul>
+        </section>
+      </ons-page>
+    </ons-template>
+
+    <!-- 質問3-4 -->
+    <ons-template id="page4-4.html">
+      <ons-page id="question3-4-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+
+        <section class="container">
+          <p id="question">Q3.何か食べたい？</p>
+          <ul id="answer">
+            <li><ons-button id="yes-button">Yes</ons-button></li>
+            <li><ons-button id="no-button">No</ons-button></li>
+          </ul>
+        </section>
+      </ons-page>
+    </ons-template>
+  
+ <!-- 結果画面 -->
+    <!-- n-y-yの時 -->
+    <ons-template id="page9.html">
+      <ons-page id="drinkwalk-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+  
+        <div class="content" style="text-align: center">
+          <h2>あなたにおすすめのプランは…</h2>
+          <img src="C:\Users\user\monaca.my-app\image\飲み歩き.png">
+          <h2>飲み歩き</h2>
+          <p>今日はパーッと飲み歩いちゃいましょう！程よいお酒は体に良いでしょう百薬の長でしょう！</p>
+          
+          <ons-button id="back-button">Home➜</ons-button>
+        </div>
+      </ons-page>
+    </ons-template>
+
+
+    <!-- n-y-nの時 -->
+    <ons-template id="page10.html">
+      <ons-page id="karaoke-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+  
+        <div class="content" style="text-align: center">
+          <h2>あなたにおすすめのプランは…</h2>
+          <img src="C:\Users\user\monaca.my-app\image\カラオケ.png">
+          <h2>カラオケ</h2>
+          <p>気が済むまで好きな曲を熱唱しましょう！ヒトカラは何も気にしなくていいのでストレス発散にもってこい！</p>
+          
+          <ons-button id="back-button">Home➜</ons-button>
+        </div>
+      </ons-page>
+    </ons-template>
+
+
+    <!-- n-n-yの時 -->
+    <ons-template id="page11.html">
+      <ons-page id="cafe-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+  
+        <div class="content" style="text-align: center">
+          <h2>あなたにおすすめのプランは…</h2>
+          <img src="C:\Users\user\monaca.my-app\image\カフェ.png">
+          <h2>カフェ</h2>
+          <p>お洒落なカフェでゆっくりコーヒーやデザートをいただきましょう！合わせて読書もしたりすればより心が落ち着くかもしれません！</p>
+          
+          <ons-button id="back-button">Home➜</ons-button>
+        </div>
+      </ons-page>
+    </ons-template>
+
+
+    <!-- n-n-nの時 -->
+    <ons-template id="page12.html">
+      <ons-page id="art-page">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">1人用</div>
+        </ons-toolbar>
+  
+        <div class="content" style="text-align: center">
+          <h2>あなたにおすすめのプランは…</h2>
+          <img src="C:\Users\user\monaca.my-app\image\美術館.png">
+          <h2>美術館</h2>
+          <p>美術館の雰囲気で心が安らぎつつ、数々の巨匠の作品に触れて美的感覚も磨かれるという夢のような場所に足を運んでみましょう！</p>
+          
+          <ons-button id="back-button">Home➜</ons-button>
+        </div>
+      </ons-page>
+    </ons-template>
+
+
+
+   <!-- 2人用 Q1がyesの場合 -->
+   <!-- 質問1 -->
+   <ons-template id="dbl-page2.html">
+    <ons-page id="dbl-question1-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <section class="container">
+        <p id="question">Q1.遠出したい？</p>
+        <ul id="answer">
+          <li><ons-button id="yes-button">Yes</ons-button></li>
+          <li><ons-button id="no-button">No</ons-button></li>
+        </ul>
+      </section>
+    </ons-page>
+  </ons-template>
+
+  <!-- 質問2 -->
+  <ons-template id="dbl-page3.html">
+    <ons-page id="dbl-question2-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <section class="container">
+        <p id="question">Q2.今の気分は？</p>
+        <ul id="answer">
+          <li><ons-button id="yes-button">楽しみたい！</ons-button></li>
+          <li><ons-button id="no-button">落ち着いた感じ</ons-button></li>
+        </ul>
+      </section>
+    </ons-page>
+  </ons-template>
+
+  <!-- 質問3-1 -->
+  <ons-template id="dbl-page4-1.html">
+    <ons-page id="dbl-question3-1-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <section class="container">
+        <p id="question">Q3.カップル？友達？</p>
+        <ul id="answer">
+          <li><ons-button id="yes-button">カップル</ons-button></li>
+          <li><ons-button id="no-button">友達</ons-button></li>
+        </ul>
+      </section>
+    </ons-page>
+  </ons-template>
+
+  <!-- 質問3-2 -->
+  <ons-template id="dbl-page4-2.html">
+    <ons-page id="dbl-question3-2-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <section class="container">
+        <p id="question">Q3.カップル？友達？</p>
+        <ul id="answer">
+          <li><ons-button id="yes-button">カップル</ons-button></li>
+          <li><ons-button id="no-button">友達</ons-button></li>
+        </ul>
+      </section>
+    </ons-page>
+  </ons-template>
+
+<!-- 結果画面 -->
+  <!-- y-y-yの時 -->
+  <ons-template id="dbl-page5.html">
+    <ons-page id="park-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\テーマパーク.png">
+        <h2>テーマパーク</h2>
+        <p>デートスポットの定番！テーマパークに行きましょう！日本には色々なテーマパークがあるのでまだ行ったことのない場所に行ってみると楽しいかも！</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <!-- y-y-nの時 -->
+  <ons-template id="dbl-page6.html">
+    <ons-page id="sports-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\スポーツ観戦.png">
+        <h2>スポーツ観戦</h2>
+        <p>スポーツ観戦で盛り上がりましょう！好きなチームが勝ったときのテンションは最高です！負けても気にするな！きっとおそらく多分楽しい、、、</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <!-- y-n-yの時 -->
+  <ons-template id="dbl-page7.html">
+    <ons-page id="onsen-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\温泉.png">
+        <h2>温泉</h2>
+        <p>カップルでゆっくりするなら温泉がベスト！疲れが吹っ飛びます！上がった後のコーヒー牛乳は絶対に2人で飲みましょう</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <!-- y-n-nの時 -->
+  <ons-template id="dbl-page8.html">
+    <ons-page id="shopping-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\ショッピング.png">
+        <h2>ショッピング</h2>
+        <p>たまには大金はたいてもいいじゃない！努力し稼いだお金だけど今日はPayday Yeah!!!</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+  <!-- 2人用 Q1がnoの場合 -->
+  <!-- 質問2 -->
+  <ons-template id="dbl-page3-1.html">
+    <ons-page id="dbl-question2-1-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <section class="container">
+        <p id="question">Q2.今の気分は？</p>
+        <ul id="answer">
+          <li><ons-button id="yes-button">楽しみたい！</ons-button></li>
+          <li><ons-button id="no-button">落ち着いた感じ</ons-button></li>
+        </ul>
+      </section>
+    </ons-page>
+  </ons-template>
+
+  <!-- 質問3-3 -->
+  <ons-template id="dbl-page4-3.html">
+    <ons-page id="dbl-question3-3-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <section class="container">
+        <p id="question">Q3.カップル？友達？</p>
+        <ul id="answer">
+          <li><ons-button id="yes-button">カップル</ons-button></li>
+          <li><ons-button id="no-button">友達</ons-button></li>
+        </ul>
+      </section>
+    </ons-page>
+  </ons-template>
+
+  <!-- 質問3-4 -->
+  <ons-template id="dbl-page4-4.html">
+    <ons-page id="dbl-question3-4-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <section class="container">
+        <p id="question">Q3.カップル？友達？</p>
+        <ul id="answer">
+          <li><ons-button id="yes-button">カップル</ons-button></li>
+          <li><ons-button id="no-button">友達</ons-button></li>
+        </ul>
+      </section>
+    </ons-page>
+  </ons-template>
+
+<!-- 結果画面 -->
+  <!-- n-y-yの時 -->
+  <ons-template id="dbl-page9.html">
+    <ons-page id="bowring-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\ボウリング.png">
+        <h2>ボウリング</h2>
+        <p>久々にすると楽しいボウリング！自分の実力を見せつけちゃいましょう！下手くそでも楽しめればNo problem！</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+  <!-- n-y-nの時 -->
+  <ons-template id="dbl-page10.html">
+    <ons-page id="karaoke2-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\カラオケ2.png">
+        <h2>カラオケ</h2>
+        <p>定期的に行きたくなるカラオケに今日は行ってみよう！歌は上手さではなく気持ち。考えるな、感じろ。祈るように歌え。</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+  <!-- n-n-yの時 -->
+  <ons-template id="dbl-page11.html">
+    <ons-page id="movie-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\映画.png">
+        <h2>映画館</h2>
+        <p>今日は映画館でゆっくりした時間を過ごしましょう！最近は様々なジャンルがあるので見たことのないジャンルに挑戦すると新たな世界が広がるかも…！</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+  <!-- n-n-nの時 -->
+  <ons-template id="dbl-page12.html">
+    <ons-page id="cafe2-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">2人用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\カフェ2.png">
+        <h2>カフェ</h2>
+        <p>今日はカフェで友達とおしゃべりする日にしましょう！好みのカフェを見つけて何気ない話。この時間こそがかけがえのない思い出になり、至福のひと時となります！</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+
+
+  <!-- 大人数用 Q1がyesの場合 -->
+   <!-- 質問1 -->
+   <ons-template id="many-page2.html">
+    <ons-page id="many-question1-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <section class="container">
+        <p id="question">Q1.遠出したい？</p>
+        <ul id="answer">
+          <li><ons-button id="yes-button">Yes</ons-button></li>
+          <li><ons-button id="no-button">No</ons-button></li>
+        </ul>
+      </section>
+    </ons-page>
+  </ons-template>
+
+  <!-- 質問2 -->
+  <ons-template id="many-page3.html">
+    <ons-page id="many-question2-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <section class="container">
+        <p id="question">Q2.5人より多い？</p>
+        <ul id="answer">
+          <li><ons-button id="yes-button">Yes</ons-button></li>
+          <li><ons-button id="no-button">No</ons-button></li>
+        </ul>
+      </section>
+    </ons-page>
+  </ons-template>
+
+  <!-- 質問3-1 -->
+  <ons-template id="many-page4-1.html">
+    <ons-page id="many-question3-1-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <section class="container">
+        <p id="question">Q3.今日の天気は？</p>
+        <ul id="answer">
+          <li><ons-button id="yes-button">晴れ</ons-button></li>
+          <li><ons-button id="no-button">雨</ons-button></li>
+        </ul>
+      </section>
+    </ons-page>
+  </ons-template>
+
+  <!-- 質問3-2 -->
+  <ons-template id="many-page4-2.html">
+    <ons-page id="many-question3-2-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <section class="container">
+        <p id="question">Q3.今日の天気は？</p>
+        <ul id="answer">
+          <li><ons-button id="yes-button">晴れ</ons-button></li>
+          <li><ons-button id="no-button">雨</ons-button></li>
+        </ul>
+      </section>
+    </ons-page>
+  </ons-template>
+
+<!-- 結果画面 -->
+  <!-- y-y-yの時 -->
+  <ons-template id="many-page5.html">
+    <ons-page id="travel-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\旅行.png">
+        <h2>旅行</h2>
+        <p>もう旅行に行くしかないというような選択…！国内でも国外でも色んな場所へ行ってみんなで思い出を作りましょう！！</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <!-- y-y-nの時 -->
+  <ons-template id="many-page6.html">
+    <ons-page id="sad-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\残念.png">
+        <h2>日を改めましょう</h2>
+        <p>悲しいですが今日は雨が降っているので大人数での遠出はおすすめしません。みんなで家でDVD、トランプ、人生ゲームなど…楽しいことはいっぱいです！</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <!-- y-n-yの時 -->
+  <ons-template id="many-page7.html">
+    <ons-page id="park2-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\テーマパーク2.png">
+        <h2>テーマパーク</h2>
+        <p>この人数ならテーマパークがオススメ！少年少女に戻って1日楽しんじゃいましょう！被り物は嫌がらずにつけましょうね！！</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <!-- y-n-nの時 -->
+  <ons-template id="many-page8.html">
+    <ons-page id="drive-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\ドライブ.png">
+        <h2>ドライブ</h2>
+        <p>車の中なら雨でも大丈夫！どこか美味しいご飯でも食べに行ってみましょう！ですが、雨の日の運転はくれぐれも気を付けてくださいね。</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+  <!-- 大人数用 Q1がnoの場合 -->
+  <!-- 質問2 -->
+  <ons-template id="many-page3-1.html">
+    <ons-page id="many-question2-1-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <section class="container">
+        <p id="question">Q2.5人より多い？</p>
+        <ul id="answer">
+          <li><ons-button id="yes-button">Yes</ons-button></li>
+          <li><ons-button id="no-button">No</ons-button></li>
+        </ul>
+      </section>
+    </ons-page>
+  </ons-template>
+
+  <!-- 質問3-3 -->
+  <ons-template id="many-page4-3.html">
+    <ons-page id="many-question3-3-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <section class="container">
+        <p id="question">Q3.今日の天気は？</p>
+        <ul id="answer">
+          <li><ons-button id="yes-button">晴れ</ons-button></li>
+          <li><ons-button id="no-button">雨</ons-button></li>
+        </ul>
+      </section>
+    </ons-page>
+  </ons-template>
+
+  <!-- 質問3-4 -->
+  <ons-template id="many-page4-4.html">
+    <ons-page id="many-question3-4-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <section class="container">
+        <p id="question">Q3.今日の天気は？</p>
+        <ul id="answer">
+          <li><ons-button id="yes-button">晴れ</ons-button></li>
+          <li><ons-button id="no-button">雨</ons-button></li>
+        </ul>
+      </section>
+    </ons-page>
+  </ons-template>
+
+<!-- 結果画面 -->
+  <!-- n-y-yの時 -->
+  <ons-template id="many-page9.html">
+    <ons-page id="outsports-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\屋外スポーツ.png">
+        <h2>屋外スポーツ</h2>
+        <p>スポーツでいい汗を流してリフレッシュ！人数がいないとできないスポーツはたくさんあるのでこの機会に楽しんでみましょう！ボールは友達怖くない。</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+  <!-- n-y-nの時 -->
+  <ons-template id="many-page10.html">
+    <ons-page id="insports-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\屋内スポーツ.png">
+        <h2>屋内スポーツ</h2>
+        <p>スポーツでいい汗を流してリフレッシュ！人数がいないとできないスポーツはたくさんあるのでこの機会に楽しんでみましょう！ボールは友達怖くない。</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+  <!-- n-n-yの時 -->
+  <ons-template id="many-page11.html">
+    <ons-page id="bbq-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\BBQ.png">
+        <h2>バーベキュー</h2>
+        <p>青空の下でBBQは最高です！やっすい肉でも楽しみながら食べると星3つ！今日は今すぐ河原に行ってください！ゴミはちゃんと持ち帰ってね！</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+  <!-- n-n-nの時 -->
+  <ons-template id="many-page12.html">
+    <ons-page id="drink-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">大人数用</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <h2>あなたにおすすめのプランは…</h2>
+        <img src="C:\Users\user\monaca.my-app\image\飲み会.png">
+        <h2>飲み会</h2>
+        <p>今日は飲もう！飲んだくれる前にここでしか言えない暴露話して、笑って、泣いて、飲んで！最＆高！！！<br>※人に迷惑はかけないように。</p>
+        
+        <ons-button id="back-button">Home➜</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+
     <!-- 今日の運勢 -->
-    <!-- <ons-template id="today-page.html">
+    <ons-template id="today-page.html">
       <ons-page id="today-page">
         <ons-toolbar>
           <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center">今日の運勢</div>
         </ons-toolbar>
         <div id="btn">?</div>
       </ons-page>
-    </ons-template> -->
-
+    </ons-template>
 
   <script src="js/main.js"></script>
 </body>
