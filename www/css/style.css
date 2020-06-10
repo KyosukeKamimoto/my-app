@@ -10,7 +10,7 @@ body {
 }
 
 .page__content{
-  background: linear-gradient(to bottom, rgb(247, 245, 144), rgb(241, 185, 101) 30%, rgb(243, 109, 72) 65%, #778bf0) !important;
+  background: linear-gradient(to bottom, rgb(247, 245, 153), rgb(196, 238, 82) 30%, rgb(33, 204, 119) 70%, #2cb3ca) !important;
   text-align: center;
 }
 
@@ -21,8 +21,17 @@ body {
 h1.title {
   font-family: 'Comic Sans MS';
   font-weight: bold;
-  font-size: 75px;
-  color: rgb(255, 51, 0);
+  font-size: 76px;
+  color: rgb(78, 125, 253);
+  margin-top: 30px;
+}
+
+h3.subtitle {
+  font-family: 'Comic Sans MS';
+  font-weight: bold;
+  font-size: 28px;
+  color: rgb(78, 125, 253);
+  margin-bottom: 30px;
 }
 
 ul {
@@ -40,21 +49,21 @@ li {
   font-size: 20px;
   font-family: 'Comic Sans MS';
   font-weight: bold;
-  background-color: rgb(232, 190, 241);
+  background-color: rgb(247, 255, 179);
   border: solid 3px;
   border-radius: 10px;
-  border-color: rgb(188, 50, 201);
+  border-color: rgb(255, 136, 0);
   width: 130px;
   height: 50px;
   text-align: center;
 }
 
-#single-button:hover, #double-button:hover, #many-button:hover {
+#single-button:hover, #double-button:hover, #many-button:hover, #today-button:hover, #yes-button:hover, #no-button:hover, #back-button:hover {
   opacity:0.5;
 	cursor: pointer;
 }
 
-#single-button:active, #double-button:active, #many-button:active {
+#single-button:active, #double-button:active, #many-button:active, #today-button:active, #yes-button:active, #no-button:active, #back-button:active {
   position: relative;
   top: 3px;
 }
@@ -65,22 +74,12 @@ li {
   font-size: 20px;
   font-family: 'Comic Sans MS';
   font-weight: bold;
-  background-color: rgb(255, 193, 219);
+  background-color: rgb(253, 236, 204);
   border: solid 3px;
   border-radius: 10px;
-  border-color: rgb(221, 38, 136);
-  width: 130px;
+  border-color: rgb(226, 76, 176);
+  width: 180px;
   height: 50px;
-}
-
-#today-button:hover {
-  opacity:0.5;
-	cursor: pointer;
-}
-
-#today-button:active {
-  position: relative;
-  top: 3px;
 }
 
 #question {
@@ -118,9 +117,33 @@ li {
   text-align: center;
 }
 
+h2 {
+  margin: auto;
+}
+
+p {
+  font-size: 20px;
+  border: dashed;
+}
+
 img{
 	width: 250px;
 	height: 250px;
 	display: flex;
 	margin: auto;
+}
+
+#back-button {
+  margin-top: 50px;
+  color: black;
+  font-size: 20px;
+  font-family: 'Century Gothic';
+  font-weight: bold;
+  background-color: rgb(254, 255, 190);
+  border: solid 3px;
+  border-radius: 10px;
+  border-color: rgb(18, 5, 133);
+  width: 170px;
+  height: 50px;
+  text-align: center;
 }
