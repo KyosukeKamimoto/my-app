@@ -23,7 +23,13 @@ h1.title {
   font-weight: bold;
   font-size: 76px;
   color: rgb(78, 125, 253);
-  margin-top: 30px;
+  margin: 30px 0 0 0;
+  position: relative;
+  animation: anime1 2.6s ease;      /* アニメーション指定 */
+}
+
+h2 {
+  font-weight: bold !important;
 }
 
 h3.subtitle {
@@ -31,7 +37,21 @@ h3.subtitle {
   font-weight: bold;
   font-size: 28px;
   color: rgb(78, 125, 253);
+  margin-top: auto;
   margin-bottom: 30px;
+  position: relative;
+  animation: anime1 2.6s ease;      /* アニメーション指定 */
+}
+
+@keyframes anime1 {
+  0% {
+      opacity:  0;                /* 透明度指定 */
+      top: 50px;                  /* 位置指定 */
+  }
+  100% {
+      opacity:  1;                /* 透明度指定 */
+      top: 0;                     /* 位置指定 */
+  }
 }
 
 ul {
@@ -49,10 +69,10 @@ li {
   font-size: 20px;
   font-family: 'Comic Sans MS';
   font-weight: bold;
-  background-color: rgb(247, 255, 179);
+  background-color: rgb(251, 253, 124);
   border: solid 3px;
   border-radius: 10px;
-  border-color: rgb(255, 136, 0);
+  border-color: rgba(255, 102, 0, 0.959);
   width: 130px;
   height: 50px;
   text-align: center;
@@ -69,7 +89,7 @@ li {
 }
 
 #today-button {
-  margin: 55px auto;
+  margin: 45px auto;
   color: black;
   font-size: 20px;
   font-family: 'Comic Sans MS';
@@ -117,13 +137,10 @@ li {
   text-align: center;
 }
 
-h2 {
-  margin: auto;
-}
-
 p {
   font-size: 20px;
   border: dashed;
+  margin-bottom: 40px;
 }
 
 img{
@@ -134,7 +151,7 @@ img{
 }
 
 #back-button {
-  margin-top: 50px;
+  margin: auto;
   color: black;
   font-size: 20px;
   font-family: 'Century Gothic';
@@ -146,4 +163,396 @@ img{
   width: 170px;
   height: 50px;
   text-align: center;
+}
+
+
+.w {
+  left: 80%;
+  position: absolute;
+  top: 75%;
+}
+
+.w-body {
+  animation: 1.3s ease-in-out infinite alternate bodyStep;
+  background-color: #1f0aff;
+  border-radius: 50%;
+  height: 80px;
+  overflow: hidden;
+  margin: -40px 0 0 -40px;
+  position: absolute;
+  text-align: center;
+  width: 80px;
+  white-space: nowrap;
+}
+
+  .w-body-skin,
+  .w-body-skin::before,
+  .w-body-skin::after {
+    background-color: #fdfdfd;
+    border-radius: 50%;
+    display: block;
+    height: 42px;
+    width: 42px;
+  }
+  .w-body-skin {
+    animation: 0.07s ease-in-out infinite alternate skinShake;
+    margin: -10px auto 0;
+  }
+    .w-body-skin::before,
+    .w-body-skin::after {
+      border-radius: 0 0 50% 50%;
+      content: '';
+      transform: translateY(20px);
+    }
+    .w-body-skin::before {
+      margin-left: -45px;
+    }
+    .w-body-skin::after {
+      margin: -42px 0 0 45px;
+    }
+
+  .w-head,
+  .w-head::before {
+    background-color: #ffd88f;
+    display: block;
+    height: 15px;
+    margin: -53px 0 0 -8px;
+    position: absolute;
+    width: 17px;
+    z-index: 1;
+  }
+    .w-head {
+      animation: 1.3s ease-in-out infinite alternate bodyStep;
+    }
+    .w-head::before {
+      background-color: rgb(2, 2, 2);
+      border-radius: 50% 50% 0 0;
+      content: '';
+      height: 20px;
+      margin: -13px 0 0;
+    }
+
+  .w-eye {
+    background-color: #ffffff;
+    border: 2px solid #2c2c2b;
+    border-radius: 0 8px 6px 70%;
+    display: block;
+    height: 4px;
+    margin: -5px 0 0 0.5px;
+    position: absolute;
+    width: 6px;
+    z-index: 1;
+  }
+    .w-eye::after {
+      background-color: #1f1e1a;
+      border-radius: 50%;
+      content: '';
+      display: block;
+      height: 3px;
+      margin: 0.5px 0 0 2px;
+      width: 3px;
+    }
+    .w-eye_right {
+      margin-left: 9px;
+      transform: scaleX(-1);
+    }
+
+  .w-arm {
+    animation: 1.3s ease-in-out infinite alternate bodyStep;
+    margin: -31px 0 0 -37px;
+    position: absolute;
+  }
+    .w-arm_right {
+      animation: 1.3s ease-in-out infinite alternate bodyStepMirror;
+      margin-left: 37px;
+    }
+    .w-arm::before {
+      animation: 0.07s ease-in-out infinite alternate armShake;
+      border-radius: 30px 30px 0 0;
+      background-color: #fdfdfd;
+      content: '';
+      height: 38px;
+      margin: -5px 0 0 -11px;
+      position: absolute;
+      transform: rotate(31deg);
+      transform-origin: bottom;
+      width: 24px;
+    }
+    .w-arm_right::before {
+      animation-delay: 0.07s;
+    }
+    .w-arm::after {
+      content: '';
+      background-color: #ffd88f;
+      border-radius: 3px 0 30px 30px;
+      height: 40px;
+      margin: 20px 0 0 -20px;
+      position: absolute;
+      transform: rotate(49deg);
+      width: 25px;
+    }
+
+  .w-leg {
+    animation: 1.3s ease-in infinite alternate legShift;
+    margin: 24px 0 0 -26px;
+    position: absolute;
+  }
+    .w-leg-top {
+      animation: 1.3s ease-in infinite alternate legTop;
+      background-color: #868685;
+      height: 25px;
+      position: absolute;
+      width: 22px;
+    }
+    .w-leg-bottom {
+      animation: 1.3s ease-in infinite alternate legBottom;
+      background-color: red;
+      height: 35px;
+      margin: 20px 0 0 0px;
+      position: absolute;
+      width: 22px;
+    }
+    .w-leg-bottom::before {
+      animation: 1.3s ease-in infinite alternate bootsBackground;
+      background-color: red;
+      border-radius: 50% 0 0 0;
+      content: '';
+      height: 5px;
+      margin: 30px 0 0 -10px;
+      position: absolute;
+      width: 10px;
+    }
+    .w-leg_right {
+      animation: 1.3s ease-in -1.3s infinite alternate legShiftScale;
+      margin-left: 26px;
+      transform: scaleX(-1);
+    }
+      .w-leg_right .w-leg-top,
+      .w-leg_right .w-leg-bottom,
+      .w-leg_right .w-leg-bottom::before {
+        animation-delay: 1.3s;
+      }
+
+.w-shoelace,
+.w-shoelace::after {
+  background-color: white;
+  border-radius: 2px;
+  height: 1px;
+  margin: 7px 0 0 0.5px;
+  transform: rotate(45deg);
+  width: 6px;
+}
+  .w-shoelace::after {
+    content: '';
+    margin: 0;
+    position:absolute;
+    transform: rotate(90deg);
+  }
+.w-heel {
+  bottom: 0;
+  height: 10px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  width: 10px;
+}
+  .w-heel::after {
+    background-color: white;
+    border-radius: 50%;
+    content: '';
+    height: 20px;
+    position: absolute;
+    width: 20px;
+  }
+@keyframes legShift {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  75% {
+    transform: translate(0, -20px);
+  }
+  90% {
+    transform: translate(20px, 0);
+  }
+  100% {
+    transform: translate(20px, 0);
+  }
+}
+
+@keyframes legShiftScale {
+  0% {
+    transform: translate(0, 0) scaleX(-1);
+    z-index: 0;
+  }
+  50% {
+    transform: translate(0, 0) scaleX(-1);
+    z-index: 0;
+  }
+  75% {
+    transform: translate(0, -25px) scaleX(-1);
+    z-index: 0;
+  }
+  90% {
+    transform: translate(-25px, 0) scaleX(-1);
+    z-index: -1;
+  }
+  100% {
+    transform: translate(-25px, 0) scaleX(-1);
+    z-index: -1;
+  }
+}
+
+@keyframes legTop {
+  0% {
+    background-color: #868685;
+    transform: rotate(0deg);
+  }
+  50% {
+    background-color: #868685;
+    transform: rotate(0deg);
+  }
+  75% {
+    background-color: #868685;
+    transform: rotate(30deg);
+  }
+  90% {
+    background-color: #868685;
+    transform: rotate(0deg);
+  }
+  100% {
+    background-color: #868685;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes legBottom {
+  0% {
+    background-color: red;
+    transform: translate(0, 0)  rotate(0deg);
+  }
+  50% {
+    background-color: red;
+    transform: translate(0, 0)  rotate(0deg);
+  }
+  75% {
+    background-color: red;
+    transform: translate(0px, -15px) rotate(-20deg);
+  }
+  90% {
+    background-color: red;
+    transform: translate(0, 0)  rotate(0deg);
+  }
+  100% {
+    background-color: red;
+    transform: translate(0, 0)  rotate(0deg);
+  }
+}
+
+@keyframes bootsBackground {
+  0% {
+    background-color: red;
+  }
+  75% {
+    background-color: red;
+  }
+  90% {
+    background-color: red;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+@keyframes bodyStep {
+  0% {
+    transform: translate3d(-22px, 0, 0);
+  }
+  2% {
+    transform: translate3d(-22px, 0, 0);
+  }
+  25% {
+    transform: translate3d(-11px, -15px, 0);
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  75% {
+    transform: translate3d(11px, -15px, 0);
+  }
+  98% {
+    transform: translate3d(22px, 0, 0);
+  }
+  100% {
+    transform: translate3d(22px, 0, 0);
+  }
+}
+
+@keyframes bodyStepMirror {
+  0% {
+    transform: translate3d(-22px, 0, 0) scaleX(-1);
+  }
+  25% {
+    transform: translate3d(-11px, -15px, 0) scaleX(-1);
+  }
+  50% {
+    transform: translate3d(0, 0, 0) scaleX(-1);
+  }
+  75% {
+    transform: translate3d(11px, -15px, 0) scaleX(-1);
+  }
+  100% {
+    transform: translate3d(22px, 0, 0) scaleX(-1);
+  }
+}
+
+@keyframes skinShake {
+  from {
+    transform: translateX(-2.5px);
+  }
+  to {
+    transform: translateX(2.5px);
+  }
+}
+
+@keyframes nipplesShake {
+  from {
+    transform: translate(44px, -25px);
+  }
+  to {
+    transform: translate(50px, -25px);
+  }
+}
+
+@keyframes armShake {
+  from {
+    transform: rotate(28deg);
+  }
+  to {
+    transform: rotate(32deg);
+  }
+}
+
+
+
+.fortune-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding:16px 0;
+}
+#fortune{
+  border:2px red solid;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 48%;
+  padding: 8px;
+}
+ 
+#fortune-button{
+  margin-top: 8px;
+  border-width: 4px;
 }

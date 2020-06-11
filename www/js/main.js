@@ -421,12 +421,6 @@ document.addEventListener('init', (e) => {
 
     page.querySelector('#today-button').onclick = () => {
       document.querySelector('#navigator').pushPage('today-page.html');
-      
-      const btn = document.getElementById('btn');
-      btn.addEventListener('click', function() {
-      const results = ['大吉', '中吉', '小吉', '末吉', '凶', '大凶'];
-      btn.textContent = results[Math.floor(Math.random() * results.length)];
-      });
     };
 
   } else if (page.matches('#today-page')) {
@@ -436,6 +430,23 @@ document.addEventListener('init', (e) => {
   }
   
 });
+const button = document.getElementById('fortune-button')
+const fortune = result =>{
+    document.getElementById('fortune').textContent = result;
+};
+const shuffle = array =>{
+    for(let i = array.length -1; i > 0; i--){
+        let j = Math.floor(Math.random() * (i + 1));
+        let reserve = array[i];
+        array[i] = array[j];
+        array[j] = reserve;
+    }
+    fortune(array[0]);
+};
+button('fortune-button').onclick = ()=>{
+    const fortuneArray = ['大吉','中吉','小吉','吉','末吉','凶','大凶'];
+    shuffle(fortuneArray);
+};
 
 
   if (ons.platform.isIPhoneX()) {
