@@ -1,7 +1,6 @@
 /**/
 @media(min-width: 200px) and (max-width: 300px) {
-	body{
-	}
+
 }
 
 body {
@@ -78,17 +77,17 @@ li {
   text-align: center;
 }
 
-#single-button:hover, #double-button:hover, #many-button:hover, #today-button:hover, #yes-button:hover, #no-button:hover, #back-button:hover {
+#single-button:hover, #double-button:hover, #many-button:hover, #fortune-button:hover, #yes-button:hover, #no-button:hover, #back-button:hover {
   opacity:0.5;
 	cursor: pointer;
 }
 
-#single-button:active, #double-button:active, #many-button:active, #today-button:active, #yes-button:active, #no-button:active, #back-button:active {
+#single-button:active, #double-button:active, #many-button:active, #fortune-button:active, #yes-button:active, #no-button:active, #back-button:active {
   position: relative;
   top: 3px;
 }
 
-#today-button {
+#fortune-button {
   margin: 45px auto;
   color: black;
   font-size: 20px;
@@ -147,7 +146,34 @@ img{
 	width: 250px;
 	height: 250px;
 	display: flex;
-	margin: auto;
+  margin: auto;
+  animation-name: fadedown;
+    animation-duration: 2s;
+}
+@keyframes fadedown {
+from {
+    opacity: 0;
+    transform: translateY(0);
+}
+to {
+    opacity: 1;
+    transform: translateY(20px);
+}
+}
+
+#pl, #comment {
+  animation-name: fadedown;
+    animation-duration: 2s;
+}
+@keyframes fadedown {
+from {
+    opacity: 0;
+    transform: translateY(0);
+}
+to {
+    opacity: 1;
+    transform: translateY(20px);
+}
 }
 
 #back-button {
@@ -165,7 +191,58 @@ img{
   text-align: center;
 }
 
+#action {
+  margin-top: 18%;
+}
 
+#hako {
+  width: 250px;
+  height: 300px;
+  margin-top: 20%;
+    animation: r3 1s linear infinite alternate;
+  }
+   
+  @keyframes r3 {
+    0%   { transform: rotate(-60deg); }
+    100% { transform: rotate(60deg); }
+  }
+
+#kuzi-button {
+  margin: 50px auto;
+  color: red;
+  font-size: 20px;
+  font-family: 'Century Gothic';
+  font-weight: bold;
+  background-color: white;
+  border: solid 5px;
+  border-radius: 10px;
+  border-color: red;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+}
+
+
+#kekka {
+  width: 300px;
+  height: 450px;
+    animation-name: fadedown;
+    animation-duration: 2s;
+}
+@keyframes fadedown {
+from {
+    opacity: 0;
+    transform: translateY(0);
+}
+to {
+    opacity: 1;
+    transform: translateY(20px);
+}
+}
+
+
+
+/* ロボットアニメーション */
 .w {
   left: 80%;
   position: absolute;
@@ -535,24 +612,3 @@ img{
   }
 }
 
-
-
-.fortune-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding:16px 0;
-}
-#fortune{
-  border:2px red solid;
-  font-size: 1.5rem;
-  text-align: center;
-  width: 48%;
-  padding: 8px;
-}
- 
-#fortune-button{
-  margin-top: 8px;
-  border-width: 4px;
-}

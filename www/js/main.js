@@ -416,37 +416,48 @@ document.addEventListener('init', (e) => {
 // 今日の運勢
 document.addEventListener('init', (e) => {
   var page = event.target;
-
+  
   if (page.matches('#home')) {
-
-    page.querySelector('#today-button').onclick = () => {
-      document.querySelector('#navigator').pushPage('today-page.html');
+    
+    page.querySelector('#fortune-button').onclick = () => {
+      document.querySelector('#navigator').pushPage('fortune-page.html');
     };
+    
+  } else if (page.matches('#fortune-page')) {
+    
+    page.querySelector('#kuzi-button').onclick = () => {
+      document.querySelector('#navigator').pushPage('fortune2-page.html');
+      
+      
+    };
+    
+  } else if (page.matches('#fortune2-page')) {
+    
+    const kekka = document.getElementById('kekka');
+    const cm = document.getElementById('cm');
+    const results = [
+      {img:'./images/daikichi.png', c:'澄み渡る空、冴える頭脳、今日はすべてが上手くいく！そして髪がサラサラになる。'},
+      {img:'./images/daikichi.png', c:'澄み渡る空、冴える頭脳、今日はすべてが上手くいく！そして髪がサラサラになる。'},
+      {img:'./images/chuukichi.png', c:''},
+      {img:'./images/chuukichi.png', c:''},
+      {img:'./images/syoukichi.png', c:'小吉'},
+      {img:'./images/kichi.png', c:'吉'},
+      {img:'./images/kichi.png', c:'吉'},
+      {img:'./images/suekichi.png', c:'末吉'},
+      {img:'./images/kyou.png', c:'凶'},
+      {img:'./images/daikyou.png', c:'大凶'},
+    ];
 
-  } else if (page.matches('#today-page')) {
+    let n = Math.floor(Math.random() * results.length);
+    kekka.src = results[n].img;
+    cm.textContent = results[n].c;
+    
     page.querySelector('#back-button').onclick = () => {
-      document.querySelector('#navigator').resetToPage('page1.html');
+        document.querySelector('#navigator').resetToPage('page1.html');
     };
   }
-  
+
 });
-const button = document.getElementById('fortune-button')
-const fortune = result =>{
-    document.getElementById('fortune').textContent = result;
-};
-const shuffle = array =>{
-    for(let i = array.length -1; i > 0; i--){
-        let j = Math.floor(Math.random() * (i + 1));
-        let reserve = array[i];
-        array[i] = array[j];
-        array[j] = reserve;
-    }
-    fortune(array[0]);
-};
-button('fortune-button').onclick = ()=>{
-    const fortuneArray = ['大吉','中吉','小吉','吉','末吉','凶','大凶'];
-    shuffle(fortuneArray);
-};
 
 
   if (ons.platform.isIPhoneX()) {
