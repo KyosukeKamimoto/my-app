@@ -475,32 +475,19 @@ if (page.matches('#home')) {
   };
 
 } else if (page.matches('#setting-page')) {
-
-  var music = new Audio();
-  function init() {
-    music.preload = "auto";
-    music.src = "./bgm/bgmusic.mp3";
-    music.load();
-
-    music.addEventListener("ended", function () {
-      music.currentTime = 0;
-      music.play();
-    }, false);
-  }
-
-  function play() {
+  
+  document.getElementById('play').addEventListener('click', () => {
+    const music = document.getElementById('music');
     music.loop = true;
     music.play();
-  }
-
-  function stop() {
+  });
+  document.getElementById('stop').addEventListener('click', () => {
+    const music = document.getElementById('music');
     music.pause();
     music.currentTime = 0;
-  }
+  });
+}
 
-  init();
-  }
-  
 });
 
 

@@ -1069,14 +1069,15 @@
         <section class="container">
           <p id="question">BGM</p>
           <div id="audio-control">
-            <ons-button onclick="stop()" id="stop">停止 ■</ons-button>
-            <ons-button onclick="play()" id="play">再生 ▶</ons-button>
+            <ons-button id="stop">停止 ■</ons-button>
+            <ons-button id="play">再生 ▶</ons-button>
           </div>
         </section>
       </div>
     </ons-page>
   </ons-template>
 
+  <audio id="music" src="./bgm/bgmusic.mp3"></audio>
   <script src="js/main.js"></script>
 </body>
 </html>
