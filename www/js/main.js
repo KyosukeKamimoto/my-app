@@ -1,9 +1,11 @@
 // This is a JavaScript file
 'use strict';
 
+
 // Page init event
 // 1人用
 document.addEventListener('init', (e) => {
+  
   var page = event.target;
 
   if (page.matches('#home')) {
@@ -136,6 +138,7 @@ document.addEventListener('init', (e) => {
   }  
   
 });
+
 
 
 
@@ -436,16 +439,17 @@ document.addEventListener('init', (e) => {
     const kekka = document.getElementById('kekka');
     const cm = document.getElementById('cm');
     const results = [
-      {img:'./images/daikichi.png', c:'澄み渡る空、冴える頭脳、今日はすべてが上手くいく！そして髪がサラサラになる。'},
-      {img:'./images/daikichi.png', c:'澄み渡る空、冴える頭脳、今日はすべてが上手くいく！そして髪がサラサラになる。'},
-      {img:'./images/chuukichi.png', c:''},
-      {img:'./images/chuukichi.png', c:''},
-      {img:'./images/syoukichi.png', c:'小吉'},
-      {img:'./images/kichi.png', c:'吉'},
-      {img:'./images/kichi.png', c:'吉'},
-      {img:'./images/suekichi.png', c:'末吉'},
-      {img:'./images/kyou.png', c:'凶'},
-      {img:'./images/daikyou.png', c:'大凶'},
+      {img:'./images/daikichi.png', c:'澄み渡る空、冴える頭脳、サラッサラな髪、今日はすることなすこと上手くいく！何かを決断するなら今日しかないでしょう。人助けをするとさらに運勢は良くなります！'},
+      {img:'./images/daikichi.png', c:'澄み渡る空、冴える頭脳、サラッサラな髪、今日はすることなすこと上手くいく！何かを決断するなら今日しかないでしょう。人助けをするとさらに運勢は良くなります！'},
+      {img:'./images/chuukichi.png', c:'今日の運勢はまあまあです。信号がすべていいタイミングで青になるレベルで何か一つくらいはいいことが起こりそうです。身の回りの整理整頓をするとさらに運勢は良くなるでしょう。'},
+      {img:'./images/chuukichi.png', c:'今日の運勢はまあまあです。信号がすべていいタイミングで青になるレベルで何か一つくらいはいいことが起こりそうです。身の回りの整理整頓をするとさらに運勢は良くなるでしょう。'},
+      {img:'./images/syoukichi.png', c:'悪くもないが、良くもない。平凡な一日となりそうです。しかし平凡の中に幸せは隠れているもの。探しに出かけてみてください。平凡な一日が素敵な一日になります。'},
+      {img:'./images/syoukichi.png', c:'悪くもないが、良くもない。平凡な一日となりそうです。しかし平凡の中に幸せは隠れているもの。探しに出かけてみてください。平凡な一日が素敵な一日になります。'},
+      {img:'./images/kichi.png', c:'今日の運勢はかなりいいです！吉は大吉の次に良いって知っていましたか？ぜひ宝くじでも買ってみてください。100万以下くらいなら多分当たります。責任は取りません。'},
+      {img:'./images/kichi.png', c:'今日の運勢はかなりいいです！吉は大吉の次に良いって知っていましたか？ぜひ宝くじでも買ってみてください。100万以下くらいなら多分当たります。責任は取りません。'},
+      {img:'./images/suekichi.png', c:'絶妙に微妙すぎて言葉がありません。ただ、どちらかというと悪いので何か世のため人のためにいいことをしましょう。幸せは自分の手でつかむのです。'},
+      {img:'./images/kyou.png', c:'今日の運勢はかなり悪いです。できれば外には出ないことをお勧めします。鳥の糞とか降ってきそうです。しかし、家にいても油断は禁物。家事を手伝うことで運勢は良くなるでしょう。'},
+      {img:'./images/daikyou.png', c:'悲惨な一日になりそうです。心に冷たい雨が降り注ぎます。おそらく今日が人生最悪の日なので出かけるなら人生最高の日に変えてから出かけてください。ポジティブに捉えるとあまり出ないので逆にラッキーです。'},
     ];
 
     let n = Math.floor(Math.random() * results.length);
@@ -458,6 +462,47 @@ document.addEventListener('init', (e) => {
   }
 
 });
+
+
+// 設定画面
+document.addEventListener('init', (e) => {
+  var page = event.target;
+
+if (page.matches('#home')) {
+    
+  page.querySelector('#setting-button').onclick = () => {
+    document.querySelector('#navigator').pushPage('setting.html');
+  };
+
+} else if (page.matches('#setting-page')) {
+
+  var music = new Audio();
+  function init() {
+    music.preload = "auto";
+    music.src = "./bgm/bgmusic.mp3";
+    music.load();
+
+    music.addEventListener("ended", function () {
+      music.currentTime = 0;
+      music.play();
+    }, false);
+  }
+
+  function play() {
+    music.loop = true;
+    music.play();
+  }
+
+  function stop() {
+    music.pause();
+    music.currentTime = 0;
+  }
+
+  init();
+  }
+  
+});
+
 
 
   if (ons.platform.isIPhoneX()) {
