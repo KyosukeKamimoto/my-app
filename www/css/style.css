@@ -46,11 +46,11 @@ h1.title {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: bold;
   font-size: 76px;
-  color: rgb(255, 77, 130);
-  text-shadow: 2px 2px 1px rgb(27, 27, 27),
-             -2px 2px 1px rgb(27, 27, 27),
-             2px -2px 1px rgb(27, 27, 27),
-             -2px -2px 1px rgb(27, 27, 27);
+  background: #314dea; /* fallback for old browsers */
+        background: -webkit-linear-gradient(left, #ff2104 15%, #ff8c3f 40%, #f11e6f 70%, #fd0a02 100%);
+        background: linear-gradient(to left, #ff2104 15%, #ff8c3f 40%, #f11e6f 70%, #fd0a02 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
   margin: 30px 0 0 0;
   position: relative;
   animation: anime1 2.6s ease;      /* アニメーション指定 */
@@ -64,11 +64,11 @@ h3.subtitle {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: bold;
   font-size: 28px;
-  color: rgb(255, 77, 130);
-  text-shadow: 2px 2px 1px rgb(27, 27, 27),
-             -2px 2px 1px rgb(27, 27, 27),
-             2px -2px 1px rgb(27, 27, 27),
-             -2px -2px 1px rgb(27, 27, 27);
+  background: #314dea; /* fallback for old browsers */
+        background: -webkit-linear-gradient(left, #ff2104 15%, #ff8c3f 40%, #f11e6f 70%, #fd0a02 100%);
+        background: linear-gradient(to left, #ff2104 15%, #ff8c3f 40%, #f11e6f 70%, #fd0a02 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
   margin-top: auto;
   margin-bottom: 30px;
   position: relative;
@@ -97,42 +97,53 @@ li {
 
 #single-button, #double-button, #many-button {
   margin: 15px auto;
-  color: black;
   font-size: 20px;
-  font-family: 'Comic Sans MS';
   font-weight: bold;
-  background-color: rgb(171, 195, 218);
-  border: solid 3px;
-  border-radius: 10px;
-  border-color: rgba(0, 2, 119, 0.959);
   width: 130px;
   height: 50px;
   text-align: center;
-}
-
-#single-button:hover, #double-button:hover, #many-button:hover, #fortune-button:hover, #yes-button:hover, #no-button:hover, #back-button:hover {
-  opacity:0.5;
-	cursor: pointer;
-}
-
-#single-button:active, #double-button:active, #many-button:active, #fortune-button:active, #yes-button:active, #no-button:active, #back-button:active {
-  position: relative;
-  top: 3px;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  background-image: linear-gradient(#4350fc 0%, #d189fa 100%);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #31032f;
 }
 
 #fortune-button {
   margin: 45px auto;
-  color: black;
   font-size: 20px;
-  font-family: 'Comic Sans MS';
   font-weight: bold;
-  background-color: rgb(255, 232, 129);
-  border: solid 3px;
-  border-radius: 10px;
-  border-color: rgb(233, 113, 0);
+  text-align: center;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  background-image: linear-gradient(#3af800c0 0%, #2dceff 100%);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #1d0149;
   width: 180px;
   height: 50px;
 }
+
+#single-button:active, #double-button:active, #many-button:active, #fortune-button:active, #back-button:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+  position: relative;
+  top: 3px;
+}
+
+
+#single-button:hover, #double-button:hover, #many-button:hover, #fortune-button:hover, #back-button:hover {
+  opacity:0.5;
+	cursor: pointer;
+}
+
 
 #question {
   font-size: 30px;
@@ -140,34 +151,49 @@ li {
 }
 
 #yes-button {
-  margin: 40px auto;
-  color: black;
+  margin: 50px auto;
   font-size: 20px;
-  font-family: 'Century Gothic';
   font-weight: bold;
-  background-color: rgb(255, 193, 219);
-  border: solid 3px;
-  border-radius: 10px;
-  border-color: rgb(221, 38, 136);
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
   width: 200px;
-  height: 50px;
+  height: 60px;
+  line-height: 50px;
+  border-radius: 10px;
   text-align: center;
+  overflow: hidden;
+  background-image: linear-gradient(45deg, #fc0e5d 0%, #fda1da 100%);
+  transition: .4s;
+}
+
+#yes-button:hover {
+  -webkit-transform: rotate(60deg);
+  transform: rotate(60deg);
 }
 
 #no-button {
   margin: 50px auto;
-  color: black;
   font-size: 20px;
-  font-family: 'Century Gothic';
   font-weight: bold;
-  background-color: rgb(198, 200, 241);
-  border: solid 3px;
-  border-radius: 10px;
-  border-color: rgb(72, 69, 228);
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
   width: 200px;
-  height: 50px;
+  height: 60px;
+  line-height: 50px;
+  border-radius: 10px;
   text-align: center;
+  overflow: hidden;
+  background-image: linear-gradient(45deg, #2c29ce 0%, #7fbff3 100%);
+  transition: .4s;
 }
+
+#no-button:hover {
+  -webkit-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
 
 p {
   font-size: 20px;
@@ -211,17 +237,19 @@ to {
 
 #back-button {
   margin: auto;
-  color: black;
   font-size: 20px;
-  font-family: 'Century Gothic';
   font-weight: bold;
-  background-color: rgb(254, 255, 190);
-  border: solid 3px;
-  border-radius: 10px;
-  border-color: rgb(18, 5, 133);
-  width: 170px;
+  width: 130px;
   height: 50px;
   text-align: center;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 8px;
+  color: #ffffff;
+  background-image: linear-gradient(#fc7743 0%, #fa8989 100%);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #4b0147;
 }
 
 #action {
@@ -242,17 +270,43 @@ to {
 
 #kuzi-button {
   margin: 50px auto;
-  color: red;
   font-size: 20px;
-  font-family: 'Century Gothic';
   font-weight: bold;
-  background-color: white;
-  border: solid 5px;
-  border-radius: 10px;
-  border-color: red;
   width: 200px;
   height: 50px;
   text-align: center;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  background-image: linear-gradient(#e00808 0%, #f8728f 100%);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #1d1c1d;
+  animation: yureru-j 1.5s infinite;
+}
+@keyframes yureru-j {
+	0% {
+		transform: translate(0px, 3px);
+	}
+	5% {
+		transform: translate(0px, -3px);
+	}
+	10% {
+		transform: translate(0px, 3px);
+	}
+	15% {
+		transform: translate(0px, -3px);
+	}
+	20% {
+		transform: translate(0px, 3px);
+	}
+	25% {
+		transform: translate(0px, -3px);
+	}
+	30% {
+		transform: translate(0px, 0px);
+	}
 }
 
 
@@ -655,16 +709,22 @@ to {
   border-color: black;
 }
 #play, #stop {
-  margin: 15px auto;
-  color: black;
+  margin:10px auto;
   font-size: 20px;
-  font-family: 'Comic Sans MS';
-  font-weight: bold;
-  background-color: rgb(190, 255, 225);
-  border: solid 3px;
-  border-radius: 10px;
-  border-color: rgb(0, 0, 0);
   width: 130px;
   height: 50px;
   text-align: center;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #02b5e2;
+  background: #dad7d7;
+  border-radius: 0 15px 15px 0;
+  transition: .4s;
+}
+
+#play:hover, #stop:hover {
+  background: #636363;
 }

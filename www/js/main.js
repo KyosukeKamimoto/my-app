@@ -76,8 +76,22 @@ document.addEventListener('init', (e) => {
    // y-n-n
   } else if (page.matches('#sightseeing-page')) {
 
+    const result = document.getElementById('result');
+    const pl = document.getElementById('pl');
+    const text = document.getElementById('text');
+
+    const results = [
+      {img:'./image/sightseeing.png', p:'寺社巡り', c:'日本各地の有名な神社やお城に訪れてみましょう！歴史的建造物に触れることで心が休まるかも！'},
+      {img:'./image/solodrive.png', p:'ドライブ', c:'ふらっとドライブにでも出かけてみましょう！音楽ガンガンにするも良し、落ち着いた曲を流すも良し、音楽を流さず運転に集中するも良し。いい気分転換になると思います！'},
+    ];
+
+    let n = Math.floor(Math.random() * results.length);
+    result.src = results[n].img;
+    pl.textContent = results[n].p;
+    text.textContent = results[n].c;
+
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
 
   } else if (page.matches('#question2-1-page')) {
