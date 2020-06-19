@@ -48,13 +48,13 @@ document.addEventListener('init', (e) => {
   } else if (page.matches('#hiking-page')) {
 
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
    // y-y-n
   } else if (page.matches('#live-page')) {
 
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
 
   } else if (page.matches('#question3-2-page')) {
@@ -71,7 +71,7 @@ document.addEventListener('init', (e) => {
   } else if (page.matches('#trip-page')) {
 
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
    // y-n-n
   } else if (page.matches('#sightseeing-page')) {
@@ -118,13 +118,13 @@ document.addEventListener('init', (e) => {
   } else if (page.matches('#drinkwalk-page')) {
 
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
    // n-y-n
   } else if (page.matches('#karaoke-page')) {
 
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
 
   } else if (page.matches('#question3-4-page')) {
@@ -141,13 +141,27 @@ document.addEventListener('init', (e) => {
   } else if (page.matches('#cafe-page')) {
 
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
    // n-n-n
   } else if (page.matches('#art-page')) {
 
+    const result = document.getElementById('result');
+    const pl = document.getElementById('pl');
+    const text = document.getElementById('text');
+
+    const results = [
+      {img:'./image/art.png', p:'美術館', c:'美術館の雰囲気で心が安らぎつつ、巨匠が生み出した数々の作品に触れて美的感覚も磨かれるという夢のような場所に足を運んでみましょう！'},
+      {img:'./image/library.png', p:'図書館', c:'今日のあなたは図書館に行くのがオススメ。あの静かで落ち着いた雰囲気の中でゆっくり読書をするととても癒されていい一日になりそうです！'},
+    ];
+
+    let n = Math.floor(Math.random() * results.length);
+    result.src = results[n].img;
+    pl.textContent = results[n].p;
+    text.textContent = results[n].c;
+
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
   }  
   
@@ -199,14 +213,42 @@ document.addEventListener('init', (e) => {
    // y-y-y
   } else if (page.matches('#park-page')) {
 
+    const result = document.getElementById('result');
+    const pl = document.getElementById('pl');
+    const text = document.getElementById('text');
+
+    const results = [
+      {img:'./image/park.png', p:'テーマパーク', c:'デートスポットの定番！テーマパークに行きましょう！日本には色々なテーマパークがあるのでまだ行ったことのない場所に行ってみると楽しいかも！'},
+      {img:'./image/zoo.png', p:'動物園', c:'デートスポットの定番！動物園に行ってみましょう！日本には色々な動物園があるのでまだ行ったことのない場所に行ってみると楽しいかも！かわいい動物達とお友達になっちゃいましょう！'},
+    ];
+
+    let n = Math.floor(Math.random() * results.length);
+    result.src = results[n].img;
+    pl.textContent = results[n].p;
+    text.textContent = results[n].c;
+
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
    // y-y-n
   } else if (page.matches('#sports-page')) {
 
+    const result = document.getElementById('result');
+    const pl = document.getElementById('pl');
+    const text = document.getElementById('text');
+
+    const results = [
+      {img:'./image/sportswatch.png', p:'スポーツ観戦', c:'スポーツ観戦で盛り上がりましょう！好きなチームが勝ったときのテンションは最高です！負けても気にするな！きっとおそらく多分楽しい、、、'},
+      {img:'./image/live2.png', p:'ライブ・フェス', c:'ライブやフェスに参加して騒ごう！思いっきり楽しんでストレス発散！'},
+    ];
+
+    let n = Math.floor(Math.random() * results.length);
+    result.src = results[n].img;
+    pl.textContent = results[n].p;
+    text.textContent = results[n].c;
+
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
 
   } else if (page.matches('#dbl-question3-2-page')) {
@@ -222,14 +264,28 @@ document.addEventListener('init', (e) => {
    // y-n-y
   } else if (page.matches('#onsen-page')) {
 
+    const result = document.getElementById('result');
+    const pl = document.getElementById('pl');
+    const text = document.getElementById('text');
+
+    const results = [
+      {img:'./image/onsen.png', p:'温泉', c:'カップルでゆっくりするなら温泉がベスト！疲れが吹っ飛びます！上がった後のコーヒー牛乳は絶対に2人で飲みましょう'},
+      {img:'./image/suizokukan.png', p:'水族館', c:'今日はデートの定番水族館に行ってみましょう！落ち着きながらも楽しめる素晴らしい空間です。しかし、うんちくを語ると嫌われるので気を付けましょう。'},
+    ];
+
+    let n = Math.floor(Math.random() * results.length);
+    result.src = results[n].img;
+    pl.textContent = results[n].p;
+    text.textContent = results[n].c;
+
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
    // y-n-n
   } else if (page.matches('#shopping-page')) {
 
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
 
   } else if (page.matches('#dbl-question2-1-page')) {
@@ -256,13 +312,13 @@ document.addEventListener('init', (e) => {
   } else if (page.matches('#bowring-page')) {
 
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
    // n-y-n
   } else if (page.matches('#karaoke2-page')) {
 
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
 
   } else if (page.matches('#dbl-question3-4-page')) {
@@ -278,14 +334,42 @@ document.addEventListener('init', (e) => {
    // n-n-y
   } else if (page.matches('#movie-page')) {
 
+    const result = document.getElementById('result');
+    const pl = document.getElementById('pl');
+    const text = document.getElementById('text');
+
+    const results = [
+      {img:'./image/movie.png', p:'映画館', c:'今日は映画館でゆっくりした時間を過ごしましょう！最近は様々なジャンルがあるので見たことのないジャンルに挑戦すると新たな世界が広がるかも…！'},
+      {img:'./image/restaurant.png', p:'レストラン', c:'今日はいつもは行けないお洒落なレストランにディナーを食べに行ってみましょう！たまにはこんな日があってもバチは当たりません。素敵な時間を過ごしてください。'},
+    ];
+
+    let n = Math.floor(Math.random() * results.length);
+    result.src = results[n].img;
+    pl.textContent = results[n].p;
+    text.textContent = results[n].c;
+
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
    // n-n-n
   } else if (page.matches('#cafe2-page')) {
 
+    const result = document.getElementById('result');
+    const pl = document.getElementById('pl');
+    const text = document.getElementById('text');
+
+    const results = [
+      {img:'./image/cafe2.png', p:'カフェ', c:'今日はカフェで友達とおしゃべりする日にしましょう！好みのカフェを見つけて何気ない話。この時間こそがかけがえのない思い出になり、至福のひと時となります！'},
+      {img:'./image/sasinomi.png', p:'サシ飲み', c:'今日は友人とサシ飲みに行っちゃいましょう！普段はできないような深い語りができるかもしれません。より絆が強くなりそうです！'},
+    ];
+
+    let n = Math.floor(Math.random() * results.length);
+    result.src = results[n].img;
+    pl.textContent = results[n].p;
+    text.textContent = results[n].c;
+
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
   }  
   
@@ -336,14 +420,29 @@ document.addEventListener('init', (e) => {
    // y-y-y
   } else if (page.matches('#travel-page')) {
 
+    const result = document.getElementById('result');
+    const pl = document.getElementById('pl');
+    const text = document.getElementById('text');
+
+    const results = [
+      {img:'./image/trip.png', p:'旅行', c:'もう旅行に行くしかないというような選択…！国内でも国外でも色んな場所へ行ってみんなで思い出を作りましょう！！'},
+      {img:'./image/park2.png', p:'テーマパーク', c:'この人数ならテーマパークがオススメ！少年少女に戻って1日楽しんじゃいましょう！かぶり物は必須なので嫌がらずにつけましょうね！！'},
+      {img:'./image/camp.png', p:'キャンプ', c:'みんなでキャンプをしましょう！自然の中で新鮮な空気をたっぷり吸って、綺麗な川や満点の星空を眺めて楽しみましょう！'}
+    ];
+
+    let n = Math.floor(Math.random() * results.length);
+    result.src = results[n].img;
+    pl.textContent = results[n].p;
+    text.textContent = results[n].c;
+
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
    // y-y-n
   } else if (page.matches('#sad-page')) {
 
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
 
   } else if (page.matches('#many-question3-2-page')) {
@@ -359,14 +458,43 @@ document.addEventListener('init', (e) => {
    // y-n-y
   } else if (page.matches('#park2-page')) {
 
+    const result = document.getElementById('result');
+    const pl = document.getElementById('pl');
+    const text = document.getElementById('text');
+
+    const results = [
+      {img:'./image/trip.png', p:'旅行', c:'もう旅行に行くしかないというような選択…！国内でも国外でも色んな場所へ行ってみんなで思い出を作りましょう！！'},
+      {img:'./image/park2.png', p:'テーマパーク', c:'この人数ならテーマパークがオススメ！少年少女に戻って1日楽しんじゃいましょう！かぶり物は必須なので嫌がらずにつけましょうね！！'},
+      {img:'./image/bokujou.png', p:'牧場', c:'今日は牧場にでも出かけてみましょう！牛や馬などの多くの動物と触れ合うことができ、美味しい食べ物も食べることが出来ます。場所によってはアスレチックもあったりとかなり楽しめると思います！'},
+    ];
+
+    let n = Math.floor(Math.random() * results.length);
+    result.src = results[n].img;
+    pl.textContent = results[n].p;
+    text.textContent = results[n].c;
+
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
    // y-n-n
   } else if (page.matches('#drive-page')) {
 
+    const result = document.getElementById('result');
+    const pl = document.getElementById('pl');
+    const text = document.getElementById('text');
+
+    const results = [
+      {img:'./image/drive.png', p:'ドライブ', c:'車の中なら雨でも大丈夫！どこかへ美味しいご飯でも食べに行ってみましょう！ですが、雨の日の運転はくれぐれも気を付けてくださいね。'},
+      {img:'./image/karaoke3.png', p:'カラオケ', c:'今日はみんなでカラオケに行って盛り上がりましょう！歌に上手さは関係ない！みんなで一緒に楽しめればそれはもう優勝です。'},
+    ];
+
+    let n = Math.floor(Math.random() * results.length);
+    result.src = results[n].img;
+    pl.textContent = results[n].p;
+    text.textContent = results[n].c;
+
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
 
   } else if (page.matches('#many-question2-1-page')) {
@@ -393,13 +521,27 @@ document.addEventListener('init', (e) => {
   } else if (page.matches('#outsports-page')) {
 
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
    // n-y-n
   } else if (page.matches('#insports-page')) {
 
+    const result = document.getElementById('result');
+    const pl = document.getElementById('pl');
+    const text = document.getElementById('text');
+
+    const results = [
+      {img:'./image/insports.png', p:'屋内スポーツ', c:'スポーツでいい汗を流してリフレッシュ！人数がいないとできないスポーツはたくさんあるのでこの機会に楽しんでみましょう！ボールは友達怖くない。'},
+      {img:'./image/nomikai.png', p:'飲み会', c:''},
+    ];
+
+    let n = Math.floor(Math.random() * results.length);
+    result.src = results[n].img;
+    pl.textContent = results[n].p;
+    text.textContent = results[n].c;
+
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
 
   } else if (page.matches('#many-question3-4-page')) {
@@ -415,14 +557,43 @@ document.addEventListener('init', (e) => {
    // n-n-y
   } else if (page.matches('#bbq-page')) {
 
+    const result = document.getElementById('result');
+    const pl = document.getElementById('pl');
+    const text = document.getElementById('text');
+
+    const results = [
+      {img:'./image/bbq.png', p:'バーベキュー', c:'青空の下でBBQは最高です！やっすい肉でも楽しみながら食べると星3つ！今日は今すぐ河川敷に行ってください！ゴミはちゃんと持ち帰ってね！'},
+      {img:'./image/fishing.png', p:'釣り', c:''},
+    ];
+
+    let n = Math.floor(Math.random() * results.length);
+    result.src = results[n].img;
+    pl.textContent = results[n].p;
+    text.textContent = results[n].c;
+
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
    // n-n-n
   } else if (page.matches('#drink-page')) {
 
+    const result = document.getElementById('result');
+    const pl = document.getElementById('pl');
+    const text = document.getElementById('text');
+
+    const results = [
+      {img:'./image/drink.png', p:'飲み会', c:'今日は飲もう！飲んだくれる前にここでしか言えない暴露話して、笑って、泣いて、飲んで！最＆高！！！<br>※人に迷惑はかけないように。'},
+      {img:'./image/takoyaki.png', p:'タコパ', c:''},
+      {img:'./image/pizza.png', p:'ピザパ', c:''},
+    ];
+
+    let n = Math.floor(Math.random() * results.length);
+    result.src = results[n].img;
+    pl.textContent = results[n].p;
+    text.textContent = results[n].c;
+
      page.querySelector('#back-button').onclick = () => {
-       document.querySelector('#navigator').bringPageTop('page1.html');
+       document.querySelector('#navigator').resetToPage('page1.html');
      };
   }  
   
@@ -503,7 +674,6 @@ if (page.matches('#home')) {
 }
 
 });
-
 
 
   if (ons.platform.isIPhoneX()) {
